@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArraysController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Ruta para mostrar los datos del controlador en una vista
+Route::get('/arrays ', [ArraysController::class, 'index']);
