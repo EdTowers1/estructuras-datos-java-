@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArraysController;
+use App\Http\Controllers\ColaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 
 //Ruta para mostrar los datos del controlador en una vista
 Route::get('/arrays ', [ArraysController::class, 'index']);
+
+Route::get('/colas' , [ColaController::class, 'index']);
