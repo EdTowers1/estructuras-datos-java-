@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EmptyQueueException;
-use App\Models\Tarea;
+use App\Services\Tarea;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -13,6 +13,7 @@ class TaskController extends Controller
     public function __construct()
     {
         $this->tarea = new Tarea();
+
     }
 
     public function addTask(Request $request)
@@ -23,13 +24,13 @@ class TaskController extends Controller
         return response()->json(['message' => 'Tarea agregada con éxito', 'tareas' => $this->tarea->all()]);
     }
 
-    public function viewTask()
+    public function viewTasks()
     { // esta función muestra las tareas que están en la cola.
 
         return response()->json(['tareas' => $this->tarea->all()]);
     }
 
-    public function proccessTask()
+    public function processTask()
     { // esta función procesa las tareas y sino hay ninguna tarea en cola marca el error.
         try {
             $processedTask = $this->tarea->dequeue();

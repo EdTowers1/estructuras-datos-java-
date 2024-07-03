@@ -40,7 +40,7 @@ class Cola extends Model
         return empty($this->items);
     }
 
-    // size: Obtener el tamaño de la cola vendrpia siendo similar al .lenght
+    // size: Obtener el tamaño de la cola vendría siendo similar al .lenght
     public function size()
     {
         return count($this->items);
